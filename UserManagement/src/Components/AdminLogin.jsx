@@ -18,7 +18,7 @@ const AdminLogin = () => {
     setLoading(true); 
 
     try {
-      const response = await axios.post("https://dealsdrayclient.onrender.com/login", bodyData);
+      const response = await axios.post("https://usermanagerserver.onrender.com/login", bodyData);
       console.log(response.data);
       localStorage.setItem("userName" , text)
       if (response.status === 200) {
@@ -52,7 +52,7 @@ const AdminLogin = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-3">
       <Toaster />
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md lg:w-[300px]">
        <Link to="/"> <h2 className="text-2xl font-bold mb-6 text-center">Login</h2></Link>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
