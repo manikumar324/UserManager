@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Toaster, toast } from "react-hot-toast";
 import { Link, useNavigate } from 'react-router-dom';
 
+
 const AdminLogin = () => {
   const [text, setText] = useState('');
   const [password, setPassword] = useState('');
@@ -50,10 +51,10 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-3">
+    <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-blue-100">
       <Toaster />
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md lg:w-[300px]">
-       <Link to="/"> <h2 className="text-2xl font-bold mb-6 text-center">Login</h2></Link>
+       <Link to="/"> <h2 className="text-3xl font-bold mb-6 text-center">Login</h2></Link>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="text" className="block text-gray-700 font-medium mb-2">Username</label>
@@ -62,7 +63,7 @@ const AdminLogin = () => {
               id="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-lg"
+              className="w-full p-3 border border-gray-300 rounded-full"
               placeholder="Mani Kumar"
               required
             />
@@ -74,15 +75,15 @@ const AdminLogin = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-lg"
-              placeholder="Manikumar@324"
+              className="w-full p-3 border border-gray-300 rounded-full"
+              placeholder="Manikumar@123"
               required
             />
           </div>
           <button
             type="submit"
             disabled={loading} 
-            className={`w-full ${loading ? 'bg-gray-400' : 'bg-blue-500'} text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300`}
+            className={`w-full ${loading ? 'bg-gray-400' : 'bg-green-500'} text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition duration-300`}
           >
             {loading ? 'Loading...' : 'Login'}
           </button>

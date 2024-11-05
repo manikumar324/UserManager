@@ -147,6 +147,10 @@ const DashBoard = () => {
     navigate("/");
   };
 
+  const home=()=>{
+    navigate("/Dashboard")
+  }
+
   const userName = localStorage.getItem("userName");
 
   const filterEmployees = (e) => {
@@ -175,8 +179,8 @@ const DashBoard = () => {
       <Toaster />
       <nav className="h-[10vh] flex w-[100vw] items-center bg-gray-200">
         <ul className="flex w-[100vw] justify-around items-center text-white">
-          <li className="font-bold lg:text-xl text-yellow-500">Home</li>
-          <li className="text-violet-500 font-bold lg:text-xl">{userName}</li>
+          <li onClick={home} className="font-bold lg:text-xl text-yellow-500 cursor-pointer">Home</li>
+          <li className="text-violet-500 font-bold lg:text-xl italic">{userName}</li>
           <button className="bg-orange-500 p-2 lg:text-xl font-bold text-sm rounded-full" onClick={logout}>
             Logout
           </button>
@@ -196,8 +200,8 @@ const DashBoard = () => {
         </Button>
       </div>
       <div className="flex flex-col justify-center items-center space-y-2 mb-3">
-        <h2 className="text-xl font-bold text-center">Users List</h2>
-        <h3 className="font-semibold">No.of Employees : <span className="font-bold text-orange-600">{users.length}</span></h3>
+        <h2 className="text-xl font-bold text-center ">Users List</h2>
+        <h3 className="font-semibold italic">No.of Employees : <span className="font-bold text-orange-500">{users.length}</span></h3>
         <input
           type="text"
           id="filter"
@@ -209,7 +213,7 @@ const DashBoard = () => {
 
       <div className="flex flex-wrap justify-center items-center">
   {users && users.length === 0 ? (
-    <p className="text-lg font-bold">No Users Yet</p>
+    <p className="text-2xl font-bold text-red-500">No Users Yet 😞</p>
   ) : (
     users && users.map((user) => (
       <div
