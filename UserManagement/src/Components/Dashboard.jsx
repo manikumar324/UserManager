@@ -32,7 +32,7 @@ const DashBoard = () => {
     });
     setSelectedUser(null);
   };
-
+//here we are fetching the server api
   const fetchUsers = async () => {
     try {
       const response = await axios.get("https://usermanagerserver.onrender.com/users");
